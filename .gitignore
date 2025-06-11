@@ -47,6 +47,6 @@ http://
 /logs/*.log
 /media/assets/*
 
-.env
+# .env
 .DS_Store
 Makefile
