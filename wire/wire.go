@@ -10,16 +10,16 @@ import (
 	Config "mini-accounting/config"
 	Library "mini-accounting/library"
 
-	LoggingRepository "mini-accounting/internal/logging/data/repository"
-	LoggingSource "mini-accounting/internal/logging/data/source"
+	// LoggingRepository "mini-accounting/internal/logging/data/repository"
+	// LoggingSource "mini-accounting/internal/logging/data/source"
 
 	CountingHandler "mini-accounting/internal/counting/delivery/presenter/http"
 	CountingUsecase "mini-accounting/internal/counting/domain/usecase"
 
-	Middleware "mini-accounting/middlewares"
+	// Middleware "mini-accounting/middlewares"
 
 	CustomValidationPackage "mini-accounting/pkg/custom_validation"
-	AccountingDBPackage "mini-accounting/pkg/data_sources/accounting_db"
+	// AccountingDBPackage "mini-accounting/pkg/data_sources/accounting_db"
 
 	Routes "mini-accounting/routes"
 )
@@ -30,13 +30,13 @@ var ProviderSet = wire.NewSet(
 	// PACKAGE
 	CustomValidationPackage.NewCustomValidation,
 	// DATABASE
-	AccountingDBPackage.New,
+	// AccountingDBPackage.New,
 
 	// DATASOURCE
-	LoggingSource.NewLoggingPersistent,
+	// LoggingSource.NewLoggingPersistent,
 
 	// REPOSITORY
-	LoggingRepository.NewLoggingRepository,
+	// LoggingRepository.NewLoggingRepository,
 
 	// USECASE
 	CountingUsecase.NewCountingUsecase,
@@ -45,7 +45,7 @@ var ProviderSet = wire.NewSet(
 	CountingHandler.NewCountingHandler,
 
 	// MIDDLEWARE
-	Middleware.NewMiddleware,
+	// Middleware.NewMiddleware,
 	// ROUTE
 	Routes.New,
 )

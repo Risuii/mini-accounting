@@ -10,7 +10,7 @@ import (
 	CountingHandler "mini-accounting/internal/counting/delivery/presenter/http"
 
 	Library "mini-accounting/library"
-	Middleware "mini-accounting/middlewares"
+	// Middleware "mini-accounting/middlewares"
 	UtilsPackage "mini-accounting/pkg/utils"
 )
 
@@ -20,22 +20,22 @@ type Routes interface {
 }
 
 type RoutesImpl struct {
-	engine          *gin.Engine
-	library         Library.Library
-	middleware      Middleware.Middleware
+	engine  *gin.Engine
+	library Library.Library
+	// middleware      Middleware.Middleware
 	countingHandler CountingHandler.CountingHandler
 }
 
 func New(
 	engine *gin.Engine,
 	library Library.Library,
-	middleware Middleware.Middleware,
+	// middleware Middleware.Middleware,
 	countingHandler CountingHandler.CountingHandler,
 ) Routes {
 	return &RoutesImpl{
-		engine:          engine,
-		library:         library,
-		middleware:      middleware,
+		engine:  engine,
+		library: library,
+		// middleware:      middleware,
 		countingHandler: countingHandler,
 	}
 }
