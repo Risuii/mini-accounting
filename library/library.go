@@ -9,6 +9,7 @@ import (
 	"encoding/base64"
 	"encoding/csv"
 	"encoding/hex"
+	"encoding/json"
 	"fmt"
 	"io"
 	"math"
@@ -23,7 +24,6 @@ import (
 
 	"github.com/PuerkitoBio/goquery"
 	"github.com/avct/uasurfer"
-	"github.com/bytedance/sonic"
 	"github.com/gocarina/gocsv"
 	"github.com/golang-jwt/jwt/v4"
 	"github.com/google/uuid"
@@ -179,8 +179,8 @@ func New() Library {
 		getWd:                 os.Getwd,
 		readConfig:            cleanenv.ReadConfig,
 		getNow:                time.Now,
-		jsonMarshal:           sonic.Marshal,
-		jsonUnmarshal:         sonic.Unmarshal,
+		jsonMarshal:           json.Marshal,
+		jsonUnmarshal:         json.Unmarshal,
 		randRead:              rand.Read,
 		aesNewCipher:          aes.NewCipher,
 		aes256CbcBlockSize:    16,
